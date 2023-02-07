@@ -1,0 +1,29 @@
+--Create parts inventory database
+
+create table parts (part_number TEXT PRIMARY KEY, description TEXT, cost INTEGER, list INTEGER, weight INTEGER, um TEXT);
+
+INSERT INTO parts VALUES ("F980P3", "CONTROL OUTPUT", 500, 1000, 3.00, "each");
+INSERT INTO parts VALUES ("F8529701", "MANIFOLD VALVE", 80, 160, 1.5, "each");
+INSERT INTO parts VALUES ("F431222", "PIN", 2.50, 5, 0.91, "each");
+INSERT INTO parts VALUES ("F431916", "WASHER", 1.50, 3, 0.01, "each");
+INSERT INTO parts VALUES ("70655103", "BELT T45", 55, 110, 1.00, "each");
+INSERT INTO parts VALUES ("70655102", "BELT T30", 54, 108, 1.00, "each");
+INSERT INTO parts VALUES ("44089301", "LOCK&KEY RL1", 1.50, 3, 0.01, "each");
+INSERT INTO parts VALUES ("44089302", "LOCK&KEY RL2", 1.50, 3, 0.01, "each");
+INSERT INTO parts VALUES ("44089303", "LOCK&KEY RL3", 1.50, 3, 0.01, "each");
+INSERT INTO parts VALUES ("F8286401", "3 WAY VALVE", 44, 88, 0.90, "each");
+INSERT INTO parts VALUES ("38174", "BELT", 19, 38, 0.50, "each");
+INSERT INTO parts VALUES ("70478601P", "DRIVE MOTOR", 594, 1184, 12, "each");
+INSERT INTO parts VALUES ("70478701P", "FAN MOTOR", 530, 1060, 0.01, "each");
+INSERT INTO parts VALUES ("38008", "HELIX", 2.90, 5.80, 0.01, "each");
+INSERT INTO parts VALUES ("RB150003", "BELT & PUMP KIT", 30.80, 61.60, 1, "each");
+
+--display the database ordered by List price.
+
+SELECT * FROM parts ORDER BY list;
+
+--Which part has highest price?
+SELECT Max(list) FROM parts;
+
+--what are the total weight of entire inventory?
+SELECT sum(weight) FROM parts;
